@@ -1,4 +1,10 @@
-
+//
+//  Coordinate.hpp
+//  CDeeplearning
+//
+//  Created by zqj on 2019/7/5.
+//  Copyright © 2019 xywy. All rights reserved.
+//
 
 #ifndef Coordinate_hpp
 #define Coordinate_hpp
@@ -10,11 +16,17 @@ using namespace std;
 
 class Coordinate {
     
+    friend ostream &operator <<(ostream &out,Coordinate &coor);
     
 public:
     
-    float m_fX;
-    float m_fY;
+    Coordinate(int x = 0, int y = 0);
+    
+    
+    void setCoor(int x, int y);
+    
+    int m_fX;
+    int m_fY;
     
 };
 
