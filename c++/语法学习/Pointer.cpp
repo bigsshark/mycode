@@ -19,10 +19,10 @@ void objectArray(){
 
     }
     p -= 4;
-    cout << p->m_fX << p->m_fY << endl;
+    cout << p->getX() << p->getY() << endl;
     p++;
     p->setCoor(10,10);
-    cout << p->m_fX << p->m_fY << endl;
+    cout << p->getX() << p->getY() << endl;
     p--;
     delete []p;
 
@@ -38,6 +38,32 @@ void pointer(){
     p->printInfp().setX(10).printInfp();
 
 
+}
+
+
+void testConst(){
+    
+    
+    Pointer *p = new Pointer(3);
+    const Pointer *q = new Pointer(3);
+    p->printInfp();
+    q->printInfp();
+    
+    p->printInfp().setX(10).printInfp();
+    
+    Coordinate coor;
+    const Coordinate &b = coor;
+    
+    b.printinfo();
+    
+    Coordinate * const c = &coor;
+    c->getX();
+    
+    delete p;
+    delete q;
+    p = NULL;
+    q = NULL;
+    
 }
 
 Pointer::Pointer(int x){
@@ -59,7 +85,7 @@ Pointer::Pointer(const Pointer &p){
 
     for (int i = 0; i<4;i ++) {
         
-        coors[i].setCoor(p.coors[i].m_fX, p.coors[i].m_fY);
+        coors[i].setCoor(p.coors[i].getX(), p.coors[i].getY());
         
     }
     
@@ -80,5 +106,19 @@ int Pointer::getX(){
 Pointer& Pointer::printInfp(){
     
     cout << this->m_iX <<endl;
+    
+    this->coor_A.printinfo();
+    this->coor_B.printinfo();
+    
+    return *this;
+}
+
+const Pointer& Pointer::printInfp() const{
+    
+    cout << this->m_iX <<endl;
+    
+    this->coor_A.printinfo();
+    this->coor_B.printinfo();
+    
     return *this;
 }

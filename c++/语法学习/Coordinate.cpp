@@ -31,3 +31,47 @@ void Coordinate::setCoor(int x, int y){
     m_fY = y;
     
 }
+
+
+Coordinate::~Coordinate(){
+    
+}
+
+
+int Coordinate::getX(){
+    return this->m_fX;
+}
+int Coordinate::getY(){
+    
+    return this->m_fY;
+    
+}
+
+void Coordinate::setX(int x){
+    this->m_fX = x;
+}
+
+void Coordinate::setY(int y){
+    this->m_fY = y;
+}
+
+
+
+void Coordinate::printinfo()const {
+    
+    cout << "(" << this->m_fX << "," << this->m_fY << ")" << endl;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

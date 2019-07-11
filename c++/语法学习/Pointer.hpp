@@ -25,12 +25,18 @@ public:
     Pointer(const Pointer &p);
     ~Pointer();
     
+    const Pointer& printInfp() const;
+    
     Pointer& printInfp();
     
     Pointer& setX(int x);
     int getX();
     
     Coordinate *coors;
+    
+    
+    const Coordinate coor_A;
+    Coordinate coor_B;
     
 private:
     
@@ -57,46 +63,17 @@ private:
      * 这个时候就用深拷贝
      */
     
+    /*
+     * const
+     * 常成员函数
+     * 常数据成员
+     *
+     *
+     */
+    
+    
     
 };
 
-
-//
-//class Coordinate {
-//
-//    friend ostream &operator <<(ostream &out,Coordinate &coor);
-//
-//public:
-//
-//    Coordinate(int x = 0, int y = 0);
-//
-//
-//    void setCoor(int x, int y);
-//
-//    int m_fX;
-//    int m_fY;
-//
-//};
-//Coordinate::Coordinate(int x,int y){
-//
-//    m_fX = x;
-//    m_fY = y;
-//
-//}
-//
-//ostream &operator <<(ostream &out,Coordinate &coor) {
-//
-//    out << "(" << coor.m_fY <<  "," << coor.m_fX  <<  ")" <<endl;
-//
-//    return out;
-//    
-//}
-//
-//void Coordinate::setCoor(int x, int y){
-//
-//    m_fX = x;
-//    m_fY = y;
-//
-//}
 
 #endif /* Pointer_hpp */

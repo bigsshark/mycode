@@ -21,10 +21,20 @@ class Coordinate {
 public:
     
     Coordinate(int x = 0, int y = 0);
+    ~Coordinate();
     
     
     void setCoor(int x, int y);
     
+    int getX();
+    int getY();
+    
+    void setX(int x);
+    void setY(int y);
+    
+    void printinfo() const;
+    
+private:
     int m_fX;
     int m_fY;
     
